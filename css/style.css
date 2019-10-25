@@ -14,6 +14,7 @@ body {
 /* Style for container centers the page and sets the element width
 ================================================== */
 #container {
+	top: 40px;
 	width: 80%;
 	margin-left: auto;
 	margin-right: auto;
@@ -66,18 +67,32 @@ p {
 	color: #fff;
 }
 
-section {
-	display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
+header {
+
 }
 
+.top {
+	background-color: #333;
+	border-radius: 10px;
+	margin-bottom: 5px;
+}
+
+@media(min-width:750px){
+	section {
+		display: flex;
+		align-items: stretch;
+		flex-direction: row;
+		justify-content: space-around;
+		flex-wrap: wrap;
+	}
+}
 article {
-	flex: 200px;
-	width: 28%;
-	margin-right: 5%;
+	flex-basis: 27%;
+	border: 1px solid #222;
+	border-radius: 10px;
 	padding: 5px;
-	display: inline-block;
+	margin-top: 5px;
+	margin-bottom: 5px;
 }
 
 div.button {
@@ -90,10 +105,8 @@ div.button a {
 	background: var(--second-color);
 	color: #fff;
 	position: relative;
-	top: 50%;
-	left: 50%;
-	margin-right: -50%;
-	transform: translate(-50%, -50%);
+	left: 25%;
+	bottom: 5px;
 	padding: 15px 32px;
 	text-align: center;
 	text-decoration: none;
@@ -126,6 +139,9 @@ div.button a {
 	margin-bottom: 5px;
 	
 }
+
+/*onclick fill categories
+==================================================*/
 
 /*Helpful classes
 ==================================================*/
