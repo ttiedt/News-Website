@@ -1,75 +1,32 @@
-function article(category, num){
-  var data = "{'ai': [{'title': 'AI 1','blurb': 'This is AI 1', 'content': 'Lorem ipsum dolor sit amet'}]}";
-  var obj = JSON.parse(data);
-  var title = obj.category[num-1].title;
-  var blurb = obj.category[num-1].blurb;
-  console.log(title + " " + blurb);
-  //return "<article><h3>"+ title + "</h3><p>" + blurb + "</p><div class='button'><a href='#'>View Article</a></div></article>";
+function article(){
+  var title = "Second Coming Of Crypto";
+  var blurb = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+  return "<article><h3>"+ title + "</h3><p>" + blurb + "</p><div class='button'><a href='article.html'>View Article</a></div></article>";
 }
-function addAi(){
-  document.getElementById('ai').insertAdjacentHTML('beforeend', article("ai", 1));
+function addArticle(num, j){
+  for(var i = 0; i < num; i++)
+    document.getElementsByTagName('section')[j].insertAdjacentHTML('beforeend', article());
 }
-function expandAi(event){
-  var category = document.getElementsByClassName("category");
-  category[0].classList.toggle("active");
-  var content = this.nextElementSibling;
-  var img = category[0].getElementsByTagName("img")[0];
-  if (content.style.display === "block") {
-    content.style.display = "none";
-    img.src = "images/up.png";
-  }
-  else {
-    content.style.display = "block";
-    img.src = "images/down.png";
-    addAi();
-  }
-}
-function expandGamming(event){
-  var category = document.getElementsByClassName("category");
-  category[1].classList.toggle("active");
-  var content = this.nextElementSibling;
-  var img = category[1].getElementsByTagName("img")[0];
-  if (content.style.display === "block") {
-    content.style.display = "none";
-    img.src = "images/up.png";
-  }
-  else {
-    content.style.display = "block";
-    img.src = "images/down.png";
-  }
-}
-function expandTech(event){
-  var category = document.getElementsByClassName("category");
-  category[2].classList.toggle("active");
-  var content = this.nextElementSibling;
-  var img = category[2].getElementsByTagName("img")[0];
-  if (content.style.display === "block") {
-    content.style.display = "none";
-    img.src = "images/up.png";
-  }
-  else {
-    content.style.display = "block";
-    img.src = "images/down.png";
-  }
-}
-function expandCrypto(event){
-  var category = document.getElementsByClassName("category");
-  category[3].classList.toggle("active");
-  var content = this.nextElementSibling;
-  var img = category[3].getElementsByTagName("img")[0];
-  if (content.style.display === "block") {
-    content.style.display = "none";
-    img.src = "images/up.png";
-  }
-  else {
-    content.style.display = "block";
-    img.src = "images/down.png";
-  }
-}
+
 function bodyLoaded() {
   var category = document.getElementsByClassName("category");
-  category[0].addEventListener("click", expandAi);
-  category[1].addEventListener("click", expandGamming);
-  category[2].addEventListener("click", expandTech);
-  category[3].addEventListener("click", expandCrypto);
+  var num = 1;
+  for(var i = 0; i < category.length; i++){
+    category[i].addEventListener("click", function(){
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      var img = this.getElementsByTagName("img")[0];
+      if(content.style.display === "block"){
+        content.style.display = "none";
+        img.src = "images/up.png";
+      }
+      else{ 
+        content.style.display = "block";
+        img.src = "images/down.png";
+        addArticle(3, i);
+        console.log(num);
+        num = num + 1;
+      }
+    })
+  };
 }

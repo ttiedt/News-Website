@@ -1,6 +1,6 @@
 html {
 	--font: 'Play', sans-serif;
-	--second-color: #f50;
+	--second-color: #2266aa;
 }
 
 body {
@@ -33,33 +33,12 @@ body {
 
 /*Style for main
 ==================================================*/
-nav {
-	font-family: var(--font);
-	color: #000;
-	font-size: 0.75em;
-	font-weight: bolder;
-	text-align: right;
-  vertical-align: middle;  
-  margin: 10px;
-  padding: 5px;
-	padding-top: 15px;
-	padding-bottom: 15px;
-	overflow: hidden;
-	position: fixed; /* Set the navbar to fixed position */
-  top: 0; /* Position the navbar at the top of the page */
-	height: 40px;
-	right: 0px;
-	width: 100%;
-	background-color: rgba(0, 0, 0, 0.0);
+header {
+	margin-bottom: 5px;
 }
 
-nav a:hover {
-	text-decoration: underline; 
-}
-a {
-	color: #000;
-	font-weight: bolder;
-	text-decoration: none;
+img {
+	width: 75%;
 }
 
 p {
@@ -67,14 +46,12 @@ p {
 	color: #fff;
 }
 
-header {
-
-}
-
 .top {
 	background-color: #333;
 	border-radius: 10px;
 	margin-bottom: 5px;
+	padding: 0 18px;
+  overflow: hidden;
 }
 
 @media(min-width:750px){
@@ -98,6 +75,7 @@ article {
 div.button {
 	position: relative;
 	font-family: var(--font);
+	margin: 0 auto;
  }
 
 div.button a {
@@ -114,6 +92,9 @@ div.button a {
 	font-size: 16px;
 	font-family: var(--font);
 	border-radius: 15px;
+}
+div.button a:hover {
+	text-decoration: underline; 
 }
 
 /*Expandable 
