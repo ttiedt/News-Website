@@ -37,6 +37,9 @@ header {
 	margin-bottom: 5px;
 }
 
+header img {
+	width: 75%;
+}
 
 p {
 	font-family: var(--font);
@@ -67,6 +70,11 @@ article {
 	padding: 5px;
 	margin-top: 5px;
 	margin-bottom: 5px;
+}
+
+article img {
+	height: 45%;
+	width: 45%;
 }
 
 div.button {
@@ -117,6 +125,7 @@ div.button a:hover {
 	margin-bottom: 5px;
 	
 }
+
 
 /*onclick fill categories
 ==================================================*/
