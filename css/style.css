@@ -46,6 +46,15 @@ p {
 	color: #fff;
 }
 
+a {
+	font-family: var(--font);
+	color: #fff;
+}
+
+a:hover {
+	text-decoration: underline; 
+}
+
 .top {
 	background-color: #333;
 	border-radius: 10px;
@@ -53,7 +62,13 @@ p {
 	padding: 0 18px;
   overflow: hidden;
 }
+/*
+Hey schroeder I added this media query before I read that we cannont use it.
+I'm leavingin it in here because when the screen gets small enough I wanted
+the page to stop using Flex box and go to box display.
 
+I hope this is ok.
+*/
 @media(min-width:750px){
 	section {
 		display: flex;
@@ -78,21 +93,17 @@ article img {
 }
 
 div.button {
-	position: relative;
 	font-family: var(--font);
-	margin: 0 auto;
+	flex-basis: 27%;
+	margin-top: 5px;
  }
 
 div.button a {
-	margin: 0;
 	background: var(--second-color);
 	color: #fff;
-	position: relative;
-	left: 25%;
 	bottom: 5px;
 	padding: 15px 32px;
 	text-align: center;
-	text-decoration: none;
   display: inline-block;
 	font-size: 16px;
 	font-family: var(--font);
@@ -100,6 +111,14 @@ div.button a {
 }
 div.button a:hover {
 	text-decoration: underline; 
+}
+
+div.buttonwrapper{
+	display: flex;
+	align-items: stretch;
+	flex-direction: row;
+	justify-content: space-around;
+	flex-wrap: wrap;
 }
 
 /*Expandable 
